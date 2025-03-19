@@ -75,9 +75,6 @@ The extracted data is saved in `productData.json` in the following format:
 - If Playwright isn't installed, run `playwright install`.
 - If the script fails to find elements, check the website for UI changes and update selectors.
 
-## License
-This project is licensed under the MIT License.
-
 ## Contributing
 Feel free to fork and submit pull requests for improvements!
 
