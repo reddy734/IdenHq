@@ -7,8 +7,8 @@ from playwright.sync_api import sync_playwright, TimeoutError as PlaywrightTimeo
 
 # Replace with your login credentials
 credentials = {
-    'username': 'vamshi.reddy@cmr.edu.in',  # Replace with your email
-    'password': 'Agibw16F'  # Replace with your password
+    'username': 'mail@mail.com',  # Replace with your email
+    'password': 'password'  # Replace with your password
 }
 
 # Path to store the context state (session cookies, etc.)
