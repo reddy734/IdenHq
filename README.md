@@ -1,39 +1,87 @@
-# Product Data Scraper
+# Playwright Web Scraper
 
-This repository contains a script that automates the process of logging into a website, navigating to a specific challenge, extracting product data, and saving the results to a JSON file using Playwright and Python.
+## Overview
+This Python project automates the process of logging into the `https://hiring.idenhq.com/` website, navigating through various pages, extracting product details, and saving them into a JSON file. It uses [Playwright](https://playwright.dev/python/) for browser automation and [tqdm](https://pypi.org/project/tqdm/) for progress visualization.
+
+## Features
+- **Automated Login**: Logs in with provided credentials.
+- **Navigation**: Clicks through the necessary buttons to access the inventory.
+- **Product Data Extraction**: Scrapes product details like title, category, cost, and updated information.
+- **Infinite Scrolling**: Scrolls until all products are loaded.
+- **JSON Output**: Saves extracted data into a structured JSON file.
+- **Error Handling**: Handles timeouts and missing elements gracefully.
 
 ## Prerequisites
+Ensure you have the following installed:
+- Python 3.7+
+- Playwright
+- tqdm
 
-To run the code, ensure you have the following installed:
+## Installation
+Clone this repository:
+```sh
+git clone https://github.com/your-username/playwright-web-scraper.git
+cd playwright-web-scraper
+```
 
-- Python 3.x
-- [Playwright](https://playwright.dev/python/docs/intro)
-- [tqdm](https://tqdm.github.io/) (for the progress bar)
-- [JSON module](https://docs.python.org/3/library/json.html) (standard in Python)
+Install dependencies:
+```sh
+pip install -r requirements.txt
+```
 
-### Install Playwright and required dependencies:
-
-1. Install Playwright:
-    ```bash
-    pip install playwright
-    ```
-
-2. Install the required browsers:
-    ```bash
-    playwright install
-    ```
-
-3. Install other dependencies:
-    ```bash
-    pip install tqdm
-    ```
+Set up Playwright browsers:
+```sh
+playwright install
+```
 
 ## Configuration
-
-Before running the script, make sure to set your credentials in the `credentials` dictionary in the script (`main.py`):
-
+Update the `credentials` dictionary in `main.py` with your login credentials:
 ```python
 credentials = {
-    'username': 'your_email@example.com',  # Replace with your email
-    'password': 'your_password'  # Replace with your password
+    'username': 'your-email@example.com',
+    'password': 'your-password'
 }
+```
+
+## Usage
+Run the script:
+```sh
+python main.py
+```
+This will:
+1. Open the website.
+2. Log in (if not already logged in).
+3. Click through required buttons.
+4. Extract and save product data to `productData.json`.
+
+## Output
+The extracted data is saved in `productData.json` in the following format:
+```json
+[
+  {
+    "id": "12345",
+    "title": "Product Name",
+    "category": "Electronics",
+    "composition": "Plastic & Metal",
+    "details": "Some details",
+    "cost": "$100",
+    "updated": "2025-03-19"
+  }
+]
+```
+
+## Troubleshooting
+- If login fails, ensure the credentials are correct.
+- If Playwright isn't installed, run `playwright install`.
+- If the script fails to find elements, check the website for UI changes and update selectors.
+
+## License
+This project is licensed under the MIT License.
+
+## Contributing
+Feel free to fork and submit pull requests for improvements!
+
+---
+
+Happy Scraping! 🚀
+
